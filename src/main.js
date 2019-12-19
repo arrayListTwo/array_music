@@ -1,4 +1,6 @@
 import Vue from 'vue'
+import './cube-ui' // cube-ui library
+import './vant-plugin' // Vant library
 import App from './App.vue'
 import router from './router'
 import store from './store'

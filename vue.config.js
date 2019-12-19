@@ -11,7 +11,20 @@ module.exports = {
   runtimeCompiler: undefined,
   productionSourceMap: undefined,
   parallel: undefined,
-  css: undefined,
+  devServer: {
+    disableHostCheck: true
+  },
+  css: {
+    loaderOptions: {
+      stylus: {
+        'resolve url': true,
+        'import': [
+          './src/theme'
+        ]
+      }
+    }
+  },
+
   chainWebpack: config => {
     config.resolve.alias
       .set('components', resolve('src/components'))
@@ -32,5 +45,12 @@ module.exports = {
         symbolId: 'icon-[name]'
       })
       .end()
+  },
+
+  pluginOptions: {
+    'cube-ui': {
+      postCompile: true,
+      theme: true
+    }
   }
 }
