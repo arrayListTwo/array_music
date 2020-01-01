@@ -1,7 +1,8 @@
 import Vue from 'vue'
 
 import {
-  button
+  Button, NoticeBar
 } from 'vant'
 
-Vue.use(button)
+Vue.use(Button)
+Vue.use(NoticeBar)
